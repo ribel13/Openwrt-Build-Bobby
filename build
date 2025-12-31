@@ -65,7 +65,7 @@ while true; do
                 echo "Please run Set Device & Configuration first" | lolcat -a
             else
                 echo "Starting firmware build process..." | lolcat -a
-                echo "Step 1: Building OpenWrt Image..." | lolcat -a
+                echo "Step 1: Building ImmortalWrt Image..." | lolcat -a
                 ./image-builder
                 
                 if [ $? -eq 0 ]; then
@@ -78,7 +78,7 @@ while true; do
                         exit 1
                     fi
                 else
-                    echo "Failed at OpenWrt image build process" | lolcat -a
+                    echo "Failed at ImmortalWrt image build process" | lolcat -a
                     exit 1
                 fi
             fi
