@@ -14,8 +14,8 @@ PACKAGE_DIR="package"
 CONFIG_PACKAGE="config-package"
 setup_image_builder() {
     local version="$1"
-    # local new_name="openwrt-${version}"
-    local new_name="immortalwrt-${version}"
+    local new_name="openwrt-${version}"
+    # local new_name="immortalwrt-${version}"
     # local image_builder_name="openwrt-imagebuilder-${version}-armsr-armv8.Linux-x86_64.tar.xz"
     # local download_url="https://downloads.openwrt.org/releases/${version}/targets/armsr/armv8"
     local image_builder_name="immortalwrt-imagebuilder-${version}-armsr-armv8.Linux-x86_64.tar.xz"
@@ -34,18 +34,18 @@ setup_image_builder() {
             return 1
         }
         
-        mv "immortalwrt-imagebuilder-${version}-armsr-armv8.Linux-x86_64" "$new_name"
-        # mv "openwrt-imagebuilder-${version}-armsr-armv8.Linux-x86_64" "$new_name"
-        # rm "$image_builder_name"
-        rm "immortalwrt-imagebuilder"
+        # mv "immortalwrt-imagebuilder-${version}-armsr-armv8.Linux-x86_64" "$new_name"
+        mv "openwrt-imagebuilder-${version}-armsr-armv8.Linux-x86_64" "$new_name"
+        rm "$image_builder_name"
+        # rm "immortalwrt-imagebuilder"
     fi
     return 0
 }
 
 build_image() {
     local version="$1"
-    # local new_name="openwrt-${version}"
-    local new_name="immortalwrt-${version}"
+    local new_name="openwrt-${version}"
+    # local new_name="immortalwrt-${version}"
     
     cd "$new_name" || {
         echo "Failed to enter directory $new_name"
@@ -99,8 +99,8 @@ build_image() {
 
 update_rootfs_size() {
     local version="$1"
-    # local new_name="openwrt-${version}"
-    local new_name="immortalwrt-${version}"
+    local new_name="openwrt-${version}"
+    # local new_name="immortalwrt-${version}"
     local config_file="$new_name/.config"
 
     echo "Modifying root partition size and image configuration..."
@@ -131,12 +131,12 @@ update_rootfs_size() {
 
 copy_rootfs() {
     local version="$1"
-    # local new_name="openwrt-${version}"
-    local new_name="immortalwrt-${version}"
+    local new_name="openwrt-${version}"
+    # local new_name="immortalwrt-${version}"
     local rootfs_file="${new_name}/bin/targets/armsr/armv8/openwrt-${version}-armsr-armv8-generic-rootfs.tar.gz"
     local ulo_rootfs="$(pwd)/./ULO-Builder/rootfs"
-    # local rootfs_name="openwrt-${version}-armsr-armv8-generic-rootfs.tar.gz"
-    local rootfs_name="immortalwrt-${version}-armsr-armv8-generic-rootfs.tar.gz"
+    local rootfs_name="openwrt-${version}-armsr-armv8-generic-rootfs.tar.gz"
+    # local rootfs_name="immortalwrt-${version}-armsr-armv8-generic-rootfs.tar.gz"
 
     echo "Copying rootfs to ULO-Builder..."
     echo "Source: $rootfs_file"
@@ -182,8 +182,8 @@ if [ -z "$version" ]; then
     exit 1
 fi
 
-# echo "Using OpenWrt version $version"
-echo "Using ImmortalWrt version $version"
+echo "Using OpenWrt version $version"
+# echo "Using ImmortalWrt version $version"
 
 setup_image_builder "$version" && \
 update_rootfs_size "$version" && \
