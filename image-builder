@@ -36,7 +36,8 @@ setup_image_builder() {
         
         mv "immortalwrt-imagebuilder-${version}-armsr-armv8.Linux-x86_64" "$new_name"
         # mv "openwrt-imagebuilder-${version}-armsr-armv8.Linux-x86_64" "$new_name"
-        rm "$image_builder_name"
+        # rm "$image_builder_name"
+        rm "immortalwrt-imagebuilder"
     fi
     return 0
 }
