@@ -34,9 +34,10 @@ on:
       version:
         description: "OpenWrt Version"
         required: true
-        default: "23.05.5"
+        default: "23.05.7"
         type: choice
         options:
+          - "23.05.7"
           - "23.05.5"
           - "23.05.4"
           - "23.05.3"
