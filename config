@@ -1,5 +1,7 @@
 DEVICE=h618-orangepi-zero3
 KERNEL=6.6.6-AW64-DBAI
 ROOTFS_SIZE=1024
-VERSION=23.05.5
-ROOTFS=openwrt-23.05.5-armsr-armv8-generic-rootfs.tar.gz
+# VERSION=23.05.5
+# ROOTFS=openwrt-23.05.5-armsr-armv8-generic-rootfs.tar.gz
+VERSION=23.05.7
+ROOTFS=immortalwrt-23.05.7-armsr-armv8-generic-rootfs.tar.gz
